@@ -5,9 +5,13 @@ int oldX = 0;
 int oldY = 0;
 int x = 0;
 int y = 0;
+String chartodisplay = "L";
 
+PFont poppins;
+  int size= 312;
 void setup(){
   size(400,400);
+  poppins = createFont("Poppins-Black.ttf", size);
   
   for(int i = 0; i < width; i +=10){
   
@@ -18,13 +22,19 @@ void setup(){
   
     line(i,0,i,height);
   }
+  
+  println("class ",chartodisplay," extends Character{");
+  println("");
+  println("  public ",chartodisplay,"(){");
+  println("    super();");
 }
 
+
 void draw(){
-  int size= 312;
+  textFont(poppins);
   textSize(size);
   fill(0, 255, 0);
-  text("X",width/2- size/4, height/2+size/4);
+  text(chartodisplay,width/2- size/3, height/2+size/4);
 }
 
 
